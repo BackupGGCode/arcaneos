@@ -1,4 +1,0 @@
-timeout 0
-title	ArcaneOS - 0.02
-	root (fd0)
-	kernel /kernel.bin

@@ -1,5 +1,0 @@
-;VGA functions
-
-[BITS 32]
-
-;VGA ASM CODE WILL GO HERE
