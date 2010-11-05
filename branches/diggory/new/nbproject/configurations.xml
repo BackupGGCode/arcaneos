@@ -127,8 +127,6 @@
           </incDir>
         </cTool>
       </compileType>
-      <item path="inc/gdt32.mac" ex="false" tool="3">
-      </item>
     </conf>
   </confs>
 </configurationDescriptor>
