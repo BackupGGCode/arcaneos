@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/loader/x86/start32.asm</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/gdt.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/gdt32.asm</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/realmode.asm</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/drivers/x86/ibmpc/kb.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/drivers/x86/ibmpc/vbe_real.asm</file>
+    </open-files>
 </project-private>
