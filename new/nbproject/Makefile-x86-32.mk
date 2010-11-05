@@ -52,6 +52,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/loader/all/startup.o \
 	${OBJECTDIR}/src/kernel/x86/gdt.o \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o \
+	${OBJECTDIR}/inc/x86/gdt32.o \
 	${OBJECTDIR}/src/kernel/x86/cpuid32.o \
 	${OBJECTDIR}/src/kernel/x86/idt.o \
 	${OBJECTDIR}/src/kernel/x86/cmos.o \
@@ -87,17 +88,17 @@ dist/x86-32/GNU-Linux-x86/new: ${OBJECTFILES}
 ${OBJECTDIR}/src/kernel/x86/irq.o: src/kernel/x86/irq.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/irq.o src/kernel/x86/irq.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/irq.o src/kernel/x86/irq.c
 
 ${OBJECTDIR}/src/kernel/x86/kload.o: src/kernel/x86/kload.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/kload.o src/kernel/x86/kload.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/kload.o src/kernel/x86/kload.c
 
 ${OBJECTDIR}/src/kernel/x86/isr.o: src/kernel/x86/isr.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/isr.o src/kernel/x86/isr.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/isr.o src/kernel/x86/isr.c
 
 ${OBJECTDIR}/src/drivers/x86/ibmpc/vbe_real.o: src/drivers/x86/ibmpc/vbe_real.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
@@ -106,7 +107,7 @@ ${OBJECTDIR}/src/drivers/x86/ibmpc/vbe_real.o: src/drivers/x86/ibmpc/vbe_real.as
 ${OBJECTDIR}/src/kernel/x86/paging.o: src/kernel/x86/paging.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/paging.o src/kernel/x86/paging.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/paging.o src/kernel/x86/paging.c
 
 ${OBJECTDIR}/src/kernel/x86/isr32.o: src/kernel/x86/isr32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
@@ -115,7 +116,7 @@ ${OBJECTDIR}/src/kernel/x86/isr32.o: src/kernel/x86/isr32.asm
 ${OBJECTDIR}/src/libraries/all/string.o: src/libraries/all/string.c 
 	${MKDIR} -p ${OBJECTDIR}/src/libraries/all
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/libraries/all/string.o src/libraries/all/string.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/libraries/all/string.o src/libraries/all/string.c
 
 ${OBJECTDIR}/src/loader/x86/start32.o: src/loader/x86/start32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/loader/x86
@@ -124,7 +125,7 @@ ${OBJECTDIR}/src/loader/x86/start32.o: src/loader/x86/start32.asm
 ${OBJECTDIR}/src/kernel/x86/cpuid.o: src/kernel/x86/cpuid.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/cpuid.o src/kernel/x86/cpuid.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/cpuid.o src/kernel/x86/cpuid.c
 
 ${OBJECTDIR}/src/kernel/x86/gdt32.o: src/kernel/x86/gdt32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
@@ -133,12 +134,12 @@ ${OBJECTDIR}/src/kernel/x86/gdt32.o: src/kernel/x86/gdt32.asm
 ${OBJECTDIR}/src/kernel/x86/timer.o: src/kernel/x86/timer.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/timer.o src/kernel/x86/timer.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/timer.o src/kernel/x86/timer.c
 
 ${OBJECTDIR}/src/kernel/x86/mm.o: src/kernel/x86/mm.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/mm.o src/kernel/x86/mm.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/mm.o src/kernel/x86/mm.c
 
 ${OBJECTDIR}/src/kernel/x86/idt32.o: src/kernel/x86/idt32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
@@ -155,22 +156,26 @@ ${OBJECTDIR}/src/kernel/x86/realmode.o: src/kernel/x86/realmode.asm
 ${OBJECTDIR}/src/drivers/all/console.o: src/drivers/all/console.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/all
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/all/console.o src/drivers/all/console.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/all/console.o src/drivers/all/console.c
 
 ${OBJECTDIR}/src/loader/all/startup.o: src/loader/all/startup.c 
 	${MKDIR} -p ${OBJECTDIR}/src/loader/all
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/loader/all/startup.o src/loader/all/startup.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/loader/all/startup.o src/loader/all/startup.c
 
 ${OBJECTDIR}/src/kernel/x86/gdt.o: src/kernel/x86/gdt.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/gdt.o src/kernel/x86/gdt.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/gdt.o src/kernel/x86/gdt.c
 
 ${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o: src/drivers/x86/ibmpc/screen.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o src/drivers/x86/ibmpc/screen.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o src/drivers/x86/ibmpc/screen.c
+
+${OBJECTDIR}/inc/x86/gdt32.o: inc/x86/gdt32.mac 
+	${MKDIR} -p ${OBJECTDIR}/inc/x86
+	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/inc/x86/gdt32.o inc/x86/gdt32.mac
 
 ${OBJECTDIR}/src/kernel/x86/cpuid32.o: src/kernel/x86/cpuid32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
@@ -179,27 +184,27 @@ ${OBJECTDIR}/src/kernel/x86/cpuid32.o: src/kernel/x86/cpuid32.asm
 ${OBJECTDIR}/src/kernel/x86/idt.o: src/kernel/x86/idt.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/idt.o src/kernel/x86/idt.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/idt.o src/kernel/x86/idt.c
 
 ${OBJECTDIR}/src/kernel/x86/cmos.o: src/kernel/x86/cmos.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/cmos.o src/kernel/x86/cmos.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/cmos.o src/kernel/x86/cmos.c
 
 ${OBJECTDIR}/src/drivers/x86/clock.o: src/drivers/x86/clock.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/clock.o src/drivers/x86/clock.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/clock.o src/drivers/x86/clock.c
 
 ${OBJECTDIR}/src/drivers/x86/ibmpc/kb.o: src/drivers/x86/ibmpc/kb.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/kb.o src/drivers/x86/ibmpc/kb.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/kb.o src/drivers/x86/ibmpc/kb.c
 
 ${OBJECTDIR}/src/loader/all/boot.o: src/loader/all/boot.c 
 	${MKDIR} -p ${OBJECTDIR}/src/loader/all
 	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/loader/all/boot.o src/loader/all/boot.c
+	$(COMPILE.c) -g -Iinc -Iinc/x86 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/loader/all/boot.o src/loader/all/boot.c
 
 # Subprojects
 .build-subprojects:
