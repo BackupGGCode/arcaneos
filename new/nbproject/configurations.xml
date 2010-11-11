@@ -75,6 +75,7 @@
           <itemPath>src/kernel/x86/isr.c</itemPath>
           <itemPath>src/kernel/x86/isr32.asm</itemPath>
           <itemPath>src/kernel/x86/kload.c</itemPath>
+          <itemPath>src/kernel/x86/lowmem.c</itemPath>
           <itemPath>src/kernel/x86/mm.c</itemPath>
           <itemPath>src/kernel/x86/paging.c</itemPath>
           <itemPath>src/kernel/x86/realmode.asm</itemPath>
