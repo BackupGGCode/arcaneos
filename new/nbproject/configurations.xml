@@ -30,6 +30,7 @@
             <itemPath>inc/x86/kb.h</itemPath>
             <itemPath>src/drivers/x86/ibmpc/screen.c</itemPath>
             <itemPath>inc/screen.h</itemPath>
+            <itemPath>src/drivers/x86/ibmpc/vbe_real.asm</itemPath>
             <itemPath>inc/x86/vbe_real.h</itemPath>
           </logicalFolder>
           <itemPath>src/drivers/x86/clock.c</itemPath>
