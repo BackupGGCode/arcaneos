@@ -79,6 +79,7 @@
           <itemPath>src/kernel/x86/lowmem.c</itemPath>
           <itemPath>src/kernel/x86/mm.c</itemPath>
           <itemPath>src/kernel/x86/paging.c</itemPath>
+          <itemPath>src/kernel/x86/paging32.asm</itemPath>
           <itemPath>src/kernel/x86/realmode.asm</itemPath>
           <itemPath>inc/x86/sys.h</itemPath>
           <itemPath>src/kernel/x86/timer.c</itemPath>
