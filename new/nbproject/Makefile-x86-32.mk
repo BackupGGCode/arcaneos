@@ -47,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/initrd.o \
 	${OBJECTDIR}/src/kernel/x86/gdt32.o \
 	${OBJECTDIR}/src/kernel/x86/timer.o \
+	${OBJECTDIR}/src/kernel/x86/paging32.o \
 	${OBJECTDIR}/src/kernel/x86/mm.o \
 	${OBJECTDIR}/src/kernel/x86/idt32.o \
 	${OBJECTDIR}/src/kernel/x86/irq32.o \
@@ -155,6 +156,10 @@ ${OBJECTDIR}/src/kernel/x86/timer.o: src/kernel/x86/timer.c
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	${RM} $@.d
 	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/timer.o src/kernel/x86/timer.c
+
+${OBJECTDIR}/src/kernel/x86/paging32.o: src/kernel/x86/paging32.asm 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
+	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/src/kernel/x86/paging32.o src/kernel/x86/paging32.asm
 
 ${OBJECTDIR}/src/kernel/x86/mm.o: src/kernel/x86/mm.c 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
