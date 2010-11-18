@@ -51,6 +51,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/kernel/x86/mm.o \
 	${OBJECTDIR}/src/kernel/x86/idt32.o \
 	${OBJECTDIR}/src/kernel/x86/irq32.o \
+	${OBJECTDIR}/src/kernel/all/driver-manager/devfs.o \
+	${OBJECTDIR}/src/kernel/all/driver-manager/dm.o \
 	${OBJECTDIR}/src/loader/x86/startup.o \
 	${OBJECTDIR}/src/kernel/x86/realmode.o \
 	${OBJECTDIR}/src/kernel/x86/lowmem.o \
@@ -173,6 +175,16 @@ ${OBJECTDIR}/src/kernel/x86/idt32.o: src/kernel/x86/idt32.asm
 ${OBJECTDIR}/src/kernel/x86/irq32.o: src/kernel/x86/irq32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
 	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/src/kernel/x86/irq32.o src/kernel/x86/irq32.asm
+
+${OBJECTDIR}/src/kernel/all/driver-manager/devfs.o: src/kernel/all/driver-manager/devfs.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/all/driver-manager
+	${RM} $@.d
+	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/all/driver-manager/devfs.o src/kernel/all/driver-manager/devfs.c
+
+${OBJECTDIR}/src/kernel/all/driver-manager/dm.o: src/kernel/all/driver-manager/dm.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/all/driver-manager
+	${RM} $@.d
+	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/all/driver-manager/dm.o src/kernel/all/driver-manager/dm.c
 
 ${OBJECTDIR}/src/loader/x86/startup.o: src/loader/x86/startup.c 
 	${MKDIR} -p ${OBJECTDIR}/src/loader/x86
