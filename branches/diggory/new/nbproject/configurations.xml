@@ -27,6 +27,8 @@
                          projectFiles="true"
                          kind="SOURCE_LOGICAL_FOLDER">
             <itemPath>src/drivers/x86/ibmpc/clock.c</itemPath>
+            <itemPath>src/drivers/x86/ibmpc/fat.c</itemPath>
+            <itemPath>inc/x86/fat.h</itemPath>
             <itemPath>src/drivers/x86/ibmpc/floppy.c</itemPath>
             <itemPath>inc/x86/floppy.h</itemPath>
             <itemPath>src/drivers/x86/ibmpc/ibmpc.c</itemPath>
@@ -48,9 +50,17 @@
                        projectFiles="true"
                        kind="SOURCE_LOGICAL_FOLDER">
           <logicalFolder name="f2"
-                         displayName="driver-manager"
+                         displayName="device-manager"
                          projectFiles="true"
                          kind="SOURCE_LOGICAL_FOLDER">
+            <logicalFolder name="f1"
+                           displayName="classes"
+                           projectFiles="true"
+                           kind="SOURCE_LOGICAL_FOLDER">
+              <itemPath>src/kernel/all/driver-manager/classes/bus.c</itemPath>
+              <itemPath>src/kernel/all/driver-manager/classes/io.c</itemPath>
+              <itemPath>src/kernel/all/driver-manager/classes/storage.c</itemPath>
+            </logicalFolder>
             <itemPath>src/kernel/all/driver-manager/devfs.c</itemPath>
             <itemPath>src/kernel/all/driver-manager/dm.c</itemPath>
             <itemPath>inc/dm.h</itemPath>

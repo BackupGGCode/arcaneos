@@ -38,11 +38,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/kernel/x86/kload.o \
 	${OBJECTDIR}/src/kernel/x86/isr.o \
 	${OBJECTDIR}/src/kernel/x86/sync.o \
-	${OBJECTDIR}/src/kernel/x86/paging.o \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/vbe_real.o \
-	${OBJECTDIR}/src/kernel/x86/isr32.o \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/ibmpc.o \
 	${OBJECTDIR}/src/libraries/all/string.o \
+	${OBJECTDIR}/src/kernel/x86/paging.o \
+	${OBJECTDIR}/src/kernel/x86/isr32.o \
 	${OBJECTDIR}/src/loader/x86/start32.o \
 	${OBJECTDIR}/src/kernel/x86/cpuid.o \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/initrd.o \
@@ -60,8 +60,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/kernel/x86/lowmem.o \
 	${OBJECTDIR}/src/drivers/all/console.o \
 	${OBJECTDIR}/src/kernel/x86/gdt.o \
+	${OBJECTDIR}/src/kernel/all/driver-manager/classes/io.o \
+	${OBJECTDIR}/src/drivers/x86/ibmpc/fat.o \
 	${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o \
+	${OBJECTDIR}/src/kernel/all/driver-manager/classes/bus.o \
 	${OBJECTDIR}/inc/x86/gdt32.o \
+	${OBJECTDIR}/src/kernel/all/driver-manager/classes/storage.o \
 	${OBJECTDIR}/src/kernel/x86/cpuid32.o \
 	${OBJECTDIR}/src/drivers/all/clock.o \
 	${OBJECTDIR}/src/loader/x86/boot.o \
@@ -123,18 +127,9 @@ ${OBJECTDIR}/src/kernel/x86/sync.o: src/kernel/x86/sync.c
 	${RM} $@.d
 	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/sync.o src/kernel/x86/sync.c
 
-${OBJECTDIR}/src/kernel/x86/paging.o: src/kernel/x86/paging.c 
-	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
-	${RM} $@.d
-	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/paging.o src/kernel/x86/paging.c
-
 ${OBJECTDIR}/src/drivers/x86/ibmpc/vbe_real.o: src/drivers/x86/ibmpc/vbe_real.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
 	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/src/drivers/x86/ibmpc/vbe_real.o src/drivers/x86/ibmpc/vbe_real.asm
-
-${OBJECTDIR}/src/kernel/x86/isr32.o: src/kernel/x86/isr32.asm 
-	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
-	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/src/kernel/x86/isr32.o src/kernel/x86/isr32.asm
 
 ${OBJECTDIR}/src/drivers/x86/ibmpc/ibmpc.o: src/drivers/x86/ibmpc/ibmpc.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
@@ -145,6 +140,15 @@ ${OBJECTDIR}/src/libraries/all/string.o: src/libraries/all/string.c
 	${MKDIR} -p ${OBJECTDIR}/src/libraries/all
 	${RM} $@.d
 	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/libraries/all/string.o src/libraries/all/string.c
+
+${OBJECTDIR}/src/kernel/x86/paging.o: src/kernel/x86/paging.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
+	${RM} $@.d
+	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/paging.o src/kernel/x86/paging.c
+
+${OBJECTDIR}/src/kernel/x86/isr32.o: src/kernel/x86/isr32.asm 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
+	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/src/kernel/x86/isr32.o src/kernel/x86/isr32.asm
 
 ${OBJECTDIR}/src/loader/x86/start32.o: src/loader/x86/start32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/loader/x86
@@ -225,14 +229,34 @@ ${OBJECTDIR}/src/kernel/x86/gdt.o: src/kernel/x86/gdt.c
 	${RM} $@.d
 	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/x86/gdt.o src/kernel/x86/gdt.c
 
+${OBJECTDIR}/src/kernel/all/driver-manager/classes/io.o: src/kernel/all/driver-manager/classes/io.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/all/driver-manager/classes
+	${RM} $@.d
+	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/all/driver-manager/classes/io.o src/kernel/all/driver-manager/classes/io.c
+
+${OBJECTDIR}/src/drivers/x86/ibmpc/fat.o: src/drivers/x86/ibmpc/fat.c 
+	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
+	${RM} $@.d
+	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/fat.o src/drivers/x86/ibmpc/fat.c
+
 ${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o: src/drivers/x86/ibmpc/screen.c 
 	${MKDIR} -p ${OBJECTDIR}/src/drivers/x86/ibmpc
 	${RM} $@.d
 	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/drivers/x86/ibmpc/screen.o src/drivers/x86/ibmpc/screen.c
 
+${OBJECTDIR}/src/kernel/all/driver-manager/classes/bus.o: src/kernel/all/driver-manager/classes/bus.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/all/driver-manager/classes
+	${RM} $@.d
+	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/all/driver-manager/classes/bus.o src/kernel/all/driver-manager/classes/bus.c
+
 ${OBJECTDIR}/inc/x86/gdt32.o: inc/x86/gdt32.mac 
 	${MKDIR} -p ${OBJECTDIR}/inc/x86
 	$(AS) $(ASFLAGS) -g -o ${OBJECTDIR}/inc/x86/gdt32.o inc/x86/gdt32.mac
+
+${OBJECTDIR}/src/kernel/all/driver-manager/classes/storage.o: src/kernel/all/driver-manager/classes/storage.c 
+	${MKDIR} -p ${OBJECTDIR}/src/kernel/all/driver-manager/classes
+	${RM} $@.d
+	$(COMPILE.c) -g -Iinc -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/kernel/all/driver-manager/classes/storage.o src/kernel/all/driver-manager/classes/storage.c
 
 ${OBJECTDIR}/src/kernel/x86/cpuid32.o: src/kernel/x86/cpuid32.asm 
 	${MKDIR} -p ${OBJECTDIR}/src/kernel/x86
