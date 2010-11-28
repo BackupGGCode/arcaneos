@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/kload.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/loader/x86/startup.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/drivers/x86/ibmpc/floppy.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/floppy.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/console.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/mt.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/mt.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/irq.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/sys.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/syscall.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/sync.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/sync.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/x86/syscall.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/x86/fat.h</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/drivers/x86/ibmpc/fat.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/drivers/x86/ibmpc/initrd.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/src/kernel/all/driver-manager/dm.c</file>
+        <file>file:/C:/Documents%20and%20Settings/Diggory/My%20Documents/VirtualBox%20Files/ArcaneOS/new/inc/dm.h</file>
+    </open-files>
 </project-private>
